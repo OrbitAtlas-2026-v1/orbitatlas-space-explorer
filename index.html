@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Earth, satellites, and space missions in an interactive 3D experience.">
+  <title>OrbitAtlas — Explore Beyond Earth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="OrbitAtlas home"><span class="brand-mark">✦</span> ORBIT<span>ATLAS</span></a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#explorer">3D Explorer</a>
+      <a href="#missions">Missions</a>
+      <a href="#library">Space Library</a>
+    </nav>
+    <span class="status"><span class="status-dot"></span> INTERACTIVE DEMO</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR WINDOW TO THE UNIVERSE</p>
+        <h1>Explore beyond<br><span>Earth.</span></h1>
+        <p class="intro">Discover our planet, explore satellite orbits, and take your first step into the universe.</p>
+        <a class="primary-button" href="#explorer">Enter 3D Explorer <span aria-hidden="true">↗</span></a>
+        <p class="small-note">Version 0.1 · Learning project · Free to explore</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="planet-glow"></div><div class="planet"></div>
+        <div class="tiny-satellite">✦</div><div class="star star-a"></div><div class="star star-b"></div><div class="star star-c"></div>
+      </div>
+    </section>
+
+    <section id="explorer" class="explorer-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">INTERACTIVE SPACE</p><h2>3D Earth Explorer</h2></div>
+        <p class="section-description">Drag to rotate · Scroll to zoom · Select a marker</p>
+      </div>
+      <div class="explorer-layout">
+        <div class="globe-frame">
+          <div id="earth-canvas" role="img" aria-label="Interactive 3D Earth with illustrative satellite orbit markers"></div>
+          <div class="canvas-label"><span class="live-dot"></span> 3D VIEW <span class="label-divider">/</span> DEMO ORBITS</div>
+          <div class="canvas-controls"><button id="reset-view" class="icon-button" title="Reset view" aria-label="Reset view">↺</button><button id="toggle-spin" class="icon-button" title="Pause or resume Earth rotation" aria-label="Pause or resume Earth rotation">Ⅱ</button></div>
+          <div id="loading" class="loading">Preparing the 3D universe…</div>
+        </div>
+        <aside class="info-panel">
+          <p class="eyebrow">OBJECT DETAILS</p>
+          <h3 id="object-name">Earth</h3>
+          <p id="object-description">Our home planet. Select an orbit marker to learn about the example object.</p>
+          <div class="detail-row"><span>Object type</span><strong id="object-type">Planet</strong></div>
+          <div class="detail-row"><span>Data status</span><strong class="demo-text">Illustrative demo</strong></div>
+          <div class="panel-divider"></div>
+          <p class="eyebrow">DEMO OBJECTS</p>
+          <button class="object-button selected" data-object="earth"><span class="object-icon earth-icon">●</span><span><strong>Earth</strong><small>Our home planet</small></span><span class="chevron">›</span></button>
+          <button class="object-button" data-object="iss"><span class="object-icon iss-icon">✦</span><span><strong>ISS example orbit</strong><small>Illustrative marker</small></span><span class="chevron">›</span></button>
+          <button class="object-button" data-object="weather"><span class="object-icon weather-icon">✦</span><span><strong>Weather satellite</strong><small>Illustrative marker</small></span><span class="chevron">›</span></button>
+          <p class="disclaimer">Important: satellite markers and paths in this first version are illustrative, not live tracking data. Real orbital data will be added in a later step.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="missions" class="feature-grid">
+      <article class="feature-card"><div class="feature-icon">◉</div><p class="eyebrow">COMING NEXT</p><h3>Mission Explorer</h3><p>Learn about spacecraft, rovers, and the missions expanding our knowledge.</p></article>
+      <article id="library" class="feature-card"><div class="feature-icon">▤</div><p class="eyebrow">COMING NEXT</p><h3>Space Library</h3><p>Build a curated library of astronomy books and trusted free learning resources.</p></article>
+      <article class="feature-card"><div class="feature-icon">✧</div><p class="eyebrow">COMING NEXT</p><h3>Cosmic Gallery</h3><p>Discover remarkable space images and the science behind them.</p></article>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#">✦ ORBIT<span>ATLAS</span></a><p>A beginner-built space exploration project. Not affiliated with NASA.</p><p>© 2026 OrbitAtlas · Educational demo</p></footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
